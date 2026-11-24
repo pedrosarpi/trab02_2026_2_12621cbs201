@@ -255,7 +255,8 @@ def criar_app(config=None):
             ordem = sorted(zip(resultado.modelo.equipamentos, resultado.modelo.b, resultado.x),
                            key=lambda item: item[2], reverse=True)
         return render_template('painel.html', ativos=ativos, vulns=vulns, abertos=abertos,
-                               resultado=resultado, erro=erro, ordem=ordem, revisao=rev)
+                               resultado=resultado, erro=erro, ordem=ordem, revisao=rev,
+                               contas={u['id']: u['login'] for u in usuarios.listar()})
 
     @app.get('/ativos')
     @protegido
@@ -265,7 +266,8 @@ def criar_app(config=None):
         lista = inv.buscar(termo) if termo else inv.listar()
         if request.args.get('tipo'):
             lista = [a for a in lista if a.tipo.name == request.args['tipo']]
-        return render_template('ativos.html', ativos=lista, revisao=rev, termo=termo)
+        return render_template('ativos.html', ativos=lista, revisao=rev, termo=termo,
+                               contas={u['id']: u['login'] for u in usuarios.listar()})
 
     @app.route('/ativos/novo', methods=['GET', 'POST'])
     @app.route('/ativos/<int:identificador>/editar', methods=['GET', 'POST'])

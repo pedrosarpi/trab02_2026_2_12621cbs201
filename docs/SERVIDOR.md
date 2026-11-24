@@ -1,5 +1,7 @@
 # OrthoCRUD — guia simples de acesso ao servidor
 
+> Instalação legada: os exemplos com `~/trabalho2` e projeto `orthocrud` descrevem a configuração anterior. Para adequar a nomenclatura e preservar o volume existente, siga [a atualização preparada em 23/11/2026](ATUALIZACAO_2026_11_23.md). Após a migração, use `~/trab02_2026_2_12621cbs201` nos comandos de monitoramento e operação.
+
 Guia público de implantação e acesso. Substitua `SEU_USUARIO` e `IP_DO_SERVIDOR`
 pelos dados fornecidos pelo administrador. A pasta `~/trabalho2`, o nome de projeto
 e as portas são exemplos; adapte-os ao seu ambiente. Execute os comandos um por

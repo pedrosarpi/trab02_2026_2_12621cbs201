@@ -171,6 +171,9 @@ class Equipamento(ABC):
             self.nome = nome
         if responsavel:
             self.responsavel = responsavel
+            # Uma alteração textual representa um responsável informado manualmente.
+            # Não manter o vínculo anterior, que prevaleceria na interface web.
+            self.responsavel_id = ''
         if setor_localizacao:
             self.setor_localizacao = setor_localizacao
         if descricao:
