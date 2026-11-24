@@ -5,6 +5,10 @@ como o risco se propaga entre equipamentos dependentes. Oferece interface web
 responsiva e interface de terminal, persistência em JSON, consulta de CVEs na NVD,
 cálculo de CVSS Base e análise de risco efetivo por álgebra linear.
 
+Para a entrega do Trabalho 02, consulte a [conformidade com os requisitos](docs/CONFORMIDADE_TRABALHO2.md).
+Quem já mantém a instalação em `~/trabalho2` deve seguir a
+[atualização com preservação do volume existente](docs/ATUALIZACAO_2026_11_23.md).
+
 Desenvolvido como projeto acadêmico, permite explorar o ciclo completo:
 **cadastrar usuários e ativos → registrar vulnerabilidades → avaliar severidade →
 definir dependências → visualizar o risco**.
@@ -162,7 +166,12 @@ py -3 scripts/configurar.py --projeto orthocrud-local --porta 2201
 
 O script cria `.env` com chave aleatória e não sobrescreve um arquivo existente.
 Mantenha esse arquivo privado. Em servidor compartilhado, escolha um nome de
-projeto único e uma porta disponível e autorizada.
+projeto no padrão obrigatório. Para uma instalação acadêmica NOVA, substitua
+o exemplo local acima por `python3 scripts/configurar.py --matricula SUA_MATRICULA`.
+O script gera `trab02_2026_2_` seguido da matrícula em minúsculas e calcula
+`2000 + os três últimos dígitos`. Use a porta somente após a atribuição pelo docente.
+O diretório e o repositório Git também devem usar o identificador obrigatório.
+Para uma instalação existente, siga o guia de atualização, preservando o volume.
 
 Os comandos seguintes são iguais nos dois sistemas:
 
@@ -448,7 +457,7 @@ Os módulos `equipamentos.py` e `modelos.py` representam o domínio;
 | Ativação bloqueada no PowerShell | Use diretamente `.\.venv\Scripts\python.exe`, conforme as instruções |
 | `No module named app` | Execute da pasta que contém `app/`, usando `-m app.web` ou `-m app.main` |
 | Erro de `SECRET_KEY` | Defina a variável no mesmo terminal; o modo local não lê `.env` |
-| Porta em uso no Docker | Escolha outra `PORTA_WEB` no `.env` e aplique com `docker compose up -d` |
+| Porta em uso no Docker | Em teste local, use outra porta livre; no servidor compartilhado, preserve a porta atribuída e solicite orientação ao docente |
 | Consulta NVD falha | Confira conexão e identificador; em caso de limite, aguarde |
 | Formulário retorna 409 | Recarregue a página e confira os dados atuais antes de reenviar |
 | Erro de leitura do JSON | Preserve o arquivo, pare a aplicação e confira o conteúdo ou restaure um backup |

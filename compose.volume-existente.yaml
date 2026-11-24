@@ -1,0 +1,6 @@
+# Use apenas para uma implantação que já possui dados em um volume conhecido.
+# O Docker deve recusar a inicialização se o volume não existir.
+volumes:
+  dados:
+    external: true
+    name: ${VOLUME_DADOS_EXISTENTE:?Informe o nome real do volume existente}

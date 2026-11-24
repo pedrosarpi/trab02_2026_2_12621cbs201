@@ -1,5 +1,15 @@
 # Histórico de alterações
 
+## Revisão de 23/11/2026 — preparada para implantação
+
+- Atualiza filelock para 4.2.1.
+- Corrige o nome do responsável nas listagens após renomear a conta.
+- Corrige o vínculo de responsável ao editar por texto livre no terminal.
+- Define nomes explícitos de projeto, imagem e container; acrescenta cálculo do identificador e porta pela matrícula.
+- Acrescenta preparação de configuração para reutilizar um volume existente, sem sobrescrever o ambiente anterior.
+- Documenta conformidade, atualização e retorno à instalação anterior.
+- Validação local: 235 testes e 10 subtestes; execução Docker e implantação final pendentes de verificação no servidor.
+
 ## 1.0.1 — 04/11/2026
 
 Atualização de manutenção sobre a release 1.0.0.

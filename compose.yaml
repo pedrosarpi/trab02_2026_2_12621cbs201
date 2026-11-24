@@ -1,6 +1,9 @@
+name: ${COMPOSE_PROJECT_NAME:?Configure o projeto antes de iniciar}
 services:
   inventario:
     build: .
+    image: ${COMPOSE_PROJECT_NAME}:revisao-20261123
+    container_name: ${COMPOSE_PROJECT_NAME}
     init: true
     restart: unless-stopped
     environment:
